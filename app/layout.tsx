@@ -1,49 +1,40 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Inter } from 'next/font/google'
 
 import './globals.css'
-import { Geist_Mono, Inter as V0_Font_Inter, Geist_Mono as V0_Font_Geist_Mono, Source_Serif_4 as V0_Font_Source_Serif_4 } from 'next/font/google'
 
-// Initialize fonts
-const _inter = V0_Font_Inter({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900"] })
-const _geistMono = V0_Font_Geist_Mono({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900"] })
-const _sourceSerif_4 = V0_Font_Source_Serif_4({ subsets: ['latin'], weight: ["200","300","400","500","600","700","800","900"] })
-
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const inter = Inter({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'DJ Daula — Surrey\'s South Asian Wedding DJ',
+  description:
+    'DJ Daula (Chetan) — Surrey, BC South Asian wedding DJ. 15 years, 500+ events. Bhangra, Bollywood, UK Grime, House. Book your Sangeet, Reception, and full wedding weekend.',
   generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  keywords: [
+    'DJ Daula',
+    'South Asian wedding DJ',
+    'Surrey BC DJ',
+    'Punjabi wedding DJ',
+    'Bhangra DJ',
+    'Bollywood DJ',
+    'wedding DJ Vancouver',
+    'Sangeet DJ',
+  ],
+  openGraph: {
+    title: 'DJ Daula — Surrey\'s South Asian Wedding DJ',
+    description: '15 years. 500+ events. One DJ. Your night. No substitutes.',
+    type: 'website',
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'dark',
+  themeColor: '#0F0F0F',
 }
 
 export default function RootLayout({
@@ -52,8 +43,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${inter.variable} bg-daula-black`}>
+      <body className="font-sans antialiased bg-daula-black text-daula-white">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
