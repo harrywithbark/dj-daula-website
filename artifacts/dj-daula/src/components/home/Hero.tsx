@@ -25,30 +25,26 @@ export default function Hero() {
         }}
       />
 
-      {/* Purple stage uplighting — top left, like the photo */}
+      {/* === HERO: Deep purple uplighting from top-left + red floor warmth === */}
       <div
-        className="absolute -top-1/3 -left-1/4 w-[700px] h-[700px] rounded-full pointer-events-none"
+        className="absolute -top-1/3 -left-1/4 w-[800px] h-[800px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.13) 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.18) 0%, transparent 60%)',
         }}
       />
-
-      {/* Purple uplighting — right side, mirrored */}
       <div
-        className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.07) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.08) 0%, transparent 60%)',
         }}
       />
-
-      {/* Red glow at bottom — warmth from the decks */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center bottom, rgba(206,31,31,0.20) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center bottom, rgba(206,31,31,0.22) 0%, transparent 65%)',
         }}
       />
 
@@ -73,7 +69,7 @@ export default function Hero() {
           <span className="w-6 h-px bg-daula-red" aria-hidden="true" />
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-balance leading-[0.95]">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-balance leading-[0.95] text-daula-white">
           One DJ.{' '}
           <span className="text-daula-red">Your Night.</span>
           <br />

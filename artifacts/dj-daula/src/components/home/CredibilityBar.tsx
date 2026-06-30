@@ -69,12 +69,12 @@ export default function CredibilityBar() {
       className="relative bg-daula-black border-b border-daula-gray-mid py-12 md:py-16 overflow-hidden"
       aria-label="Credentials"
     >
-      {/* Subtle purple glow in background */}
+      {/* === CREDIBILITY: Warm gold underglow from below === */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at 50% 120%, rgba(180,0,255,0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 50% 130%, rgba(201,168,76,0.14) 0%, transparent 55%)',
         }}
       />
 

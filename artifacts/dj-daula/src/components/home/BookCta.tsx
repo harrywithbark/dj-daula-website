@@ -8,12 +8,12 @@ export default function BookCta() {
       className="relative bg-daula-gray py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
       aria-labelledby="book-cta-heading"
     >
-      {/* Purple ambient glow — top right corner, like venue uplighting */}
+      {/* === BOOK CTA: Soft gold glow from bottom-left === */}
       <div
-        className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute -bottom-1/3 -left-1/4 w-[600px] h-[500px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.10) 0%, transparent 65%)',
+          background: 'radial-gradient(ellipse at center, rgba(255,215,0,0.10) 0%, transparent 60%)',
         }}
       />
 

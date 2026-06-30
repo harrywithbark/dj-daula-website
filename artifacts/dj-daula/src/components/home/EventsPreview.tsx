@@ -96,9 +96,17 @@ function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
 export default function EventsPreview() {
   return (
     <section
-      className="bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid"
+      className="relative bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
       aria-labelledby="events-heading"
     >
+      {/* === EVENTS: Purple wash from bottom-right === */}
+      <div
+        className="absolute -bottom-1/4 -right-1/4 w-[700px] h-[500px] rounded-full pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.12) 0%, transparent 60%)',
+        }}
+      />
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
