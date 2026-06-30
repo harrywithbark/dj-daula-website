@@ -87,7 +87,7 @@ export default function CredibilityBar() {
                 className="group bg-daula-black px-6 py-8 md:py-10 flex flex-col gap-1 items-center text-center hover:bg-daula-gray transition-colors duration-300"
                 role="listitem"
               >
-                <p className="text-3xl md:text-4xl font-black text-daula-white tabular-nums leading-none">
+                <p className="text-3xl md:text-4xl font-black tabular-nums leading-none" style={{ color: '#CE1F1F', textShadow: '0 0 20px rgba(206,31,31,0.7), 0 0 40px rgba(206,31,31,0.3)' }}>
                   <AnimatedNumber target={stat.value} suffix={stat.suffix} active={active} />
                 </p>
                 <p className="text-xs font-medium tracking-wide text-daula-gray-light mt-1 group-hover:text-daula-white transition-colors duration-300">

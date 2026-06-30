@@ -59,7 +59,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className="bg-daula-red text-daula-white text-sm font-semibold tracking-wide px-4 py-2 hover:bg-daula-red/90 transition-all duration-200 hover:shadow-[0_0_12px_rgba(201,168,76,0.3)]"
+            className="text-daula-white text-sm font-semibold tracking-wide px-4 py-2 transition-all duration-200 neon-btn-red"
             aria-label="Book your date"
           >
             Book Your Date&nbsp;&rarr;

@@ -309,9 +309,89 @@
   animation: shimmer 1.5s ease-in-out infinite;
 }
 
-/* Section label glow on scroll-active */
+@keyframes neon-pulse-red {
+  0%, 100% {
+    text-shadow:
+      0 0 8px #fff,
+      0 0 20px #CE1F1F,
+      0 0 40px #CE1F1F,
+      0 0 80px #CE1F1F,
+      0 0 120px #9B0000;
+  }
+  50% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 12px #CE1F1F,
+      0 0 28px #CE1F1F,
+      0 0 60px #CE1F1F,
+      0 0 100px #9B0000;
+  }
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      0 0 8px #fff,
+      0 0 20px #CE1F1F,
+      0 0 40px #CE1F1F,
+      0 0 80px #CE1F1F,
+      0 0 120px #9B0000;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+/* Prominent neon red text — for "Your Night" style moments */
+.neon-text-red {
+  color: #CE1F1F;
+  animation: neon-pulse-red 2.5s ease-in-out infinite;
+}
+
+/* Section label glow */
 .glow-label {
-  text-shadow: 0 0 20px rgba(206,31,31,0.4), 0 0 40px rgba(206,31,31,0.15);
+  text-shadow:
+    0 0 10px rgba(206,31,31,0.9),
+    0 0 30px rgba(206,31,31,0.5),
+    0 0 60px rgba(206,31,31,0.2);
+}
+
+/* Neon red button */
+.neon-btn-red {
+  background: #CE1F1F;
+  border: 1px solid #CE1F1F;
+  box-shadow:
+    0 0 10px rgba(206,31,31,0.6),
+    0 0 30px rgba(206,31,31,0.3),
+    inset 0 0 10px rgba(255,255,255,0.05);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.neon-btn-red:hover {
+  background: #e82222;
+  box-shadow:
+    0 0 18px rgba(206,31,31,0.9),
+    0 0 50px rgba(206,31,31,0.5),
+    0 0 80px rgba(206,31,31,0.2),
+    inset 0 0 12px rgba(255,255,255,0.08);
+}
+
+/* Neon outline button */
+.neon-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(206,31,31,0.5);
+  box-shadow:
+    0 0 8px rgba(206,31,31,0.25),
+    inset 0 0 8px rgba(206,31,31,0.05);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.neon-btn-outline:hover {
+  border-color: rgba(206,31,31,0.9);
+  box-shadow:
+    0 0 16px rgba(206,31,31,0.6),
+    0 0 40px rgba(206,31,31,0.2),
+    inset 0 0 12px rgba(206,31,31,0.08);
 }
 
 /**
