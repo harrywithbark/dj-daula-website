@@ -78,11 +78,11 @@ function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
         </ul>
 
         <Link
-          href="/contact"
+          href={`/packages#${event.id}`}
           className="inline-flex items-center gap-1 text-xs font-semibold tracking-wide text-daula-red hover:text-daula-white transition-colors duration-200 mt-1"
-          aria-label={`Enquire about ${event.name}`}
+          aria-label={`See ${event.name} package details`}
         >
-          Enquire for {event.name}
+          See package details
           <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">
             &rarr;
           </span>

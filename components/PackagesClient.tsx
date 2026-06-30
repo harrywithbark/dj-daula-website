@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { EVENTS } from '@/lib/events-data'
@@ -10,6 +10,14 @@ type EventId = typeof EVENTS[number]['id']
 
 export default function PackagesClient() {
   const [selectedPackage, setSelectedPackage] = useState<EventId | null>(null)
+
+  // Auto-open modal based on URL hash
+  useEffect(() => {
+    const hash = window.location.hash.slice(1)
+    if (hash && EVENTS.some((e) => e.id === hash)) {
+      setSelectedPackage(hash as EventId)
+    }
+  }, [])
 
   return (
     <>
