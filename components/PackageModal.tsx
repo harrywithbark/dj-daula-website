@@ -113,24 +113,34 @@ export default function PackageModal({ eventId, isOpen, onClose }: PackageModalP
                   Popular add-ons
                 </h3>
                 <div className="space-y-2" role="list">
-                  {suggestedAddOns.map((addon) => (
-                    <div
-                      key={addon.id}
-                      className="flex items-start gap-3 p-3 bg-daula-gray border border-daula-gray-mid hover:border-daula-red/30 transition-colors duration-200"
-                      role="listitem"
-                    >
-                      <input
-                        type="checkbox"
-                        id={addon.id}
-                        className="w-4 h-4 mt-0.5 accent-daula-red cursor-pointer"
-                        aria-label={addon.name}
-                      />
-                      <label htmlFor={addon.id} className="cursor-pointer flex-1 min-w-0">
-                        <div className="text-sm font-semibold text-daula-white">{addon.name}</div>
-                        <div className="text-xs text-daula-gray-light mt-0.5">{addon.description}</div>
-                      </label>
-                    </div>
-                  ))}
+                  {suggestedAddOns.map((addon) => {
+                    const isPremium = 'isPremium' in addon && addon.isPremium
+                    return (
+                      <div
+                        key={addon.id}
+                        className={`flex items-start gap-3 p-3 border transition-all duration-200 ${
+                          isPremium
+                            ? 'bg-daula-gray border-[#00F0FF]/40 hover:border-[#00F0FF]/80 hover:shadow-[0_0_16px_rgba(0,240,255,0.2)]'
+                            : 'bg-daula-gray border-daula-gray-mid hover:border-daula-red/30'
+                        }`}
+                        role="listitem"
+                      >
+                        <input
+                          type="checkbox"
+                          id={addon.id}
+                          className={`w-4 h-4 mt-0.5 cursor-pointer ${isPremium ? 'accent-[#00F0FF]' : 'accent-daula-red'}`}
+                          aria-label={addon.name}
+                        />
+                        <label htmlFor={addon.id} className="cursor-pointer flex-1 min-w-0">
+                          <div className={`text-sm font-semibold flex items-center gap-2 ${isPremium ? 'text-[#00F0FF]' : 'text-daula-white'}`}>
+                            {addon.name}
+                            {isPremium && <span className="text-[10px] font-black tracking-widest uppercase px-2 py-0.5 bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/40 rounded-full">Premium</span>}
+                          </div>
+                          <div className={`text-xs mt-0.5 ${isPremium ? 'text-[#00F0FF]/70' : 'text-daula-gray-light'}`}>{addon.description}</div>
+                        </label>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             )}

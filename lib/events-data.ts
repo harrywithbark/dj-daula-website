@@ -3,6 +3,7 @@
 
 export const ADD_ONS = [
   { id: 'uplighting', name: 'Uplighting', description: 'Color-changing LED uplighting for venue mood' },
+  { id: 'neonlighting', name: 'Neon Uplighting', description: 'Vibrant neon cyan, pink & purple lighting — next-level energy', isPremium: true },
   { id: 'secondmic', name: 'Second Microphone', description: 'Extra wireless mic for toasts & announcements' },
   { id: 'dancing', name: 'Desi Dancing Coach', description: 'Live dance coaching session (30 min)' },
   { id: 'photobooth', name: 'Photo Booth Setup', description: 'Photo booth music & transitions' },
@@ -23,7 +24,7 @@ export const EVENTS = [
     imgSrc: '/placeholder.svg?height=480&width=720',
     imgAlt: 'Sangeet dance floor packed with guests, Bhangra energy',
     accentLabel: 'Bhangra · Bollywood',
-    suggestedAddOns: ['uplighting', 'secondmic', 'livedrums'],
+    suggestedAddOns: ['uplighting', 'neonlighting', 'secondmic', 'livedrums'],
   },
   {
     id: 'reception',
@@ -37,7 +38,7 @@ export const EVENTS = [
     imgSrc: '/placeholder.svg?height=480&width=720',
     imgAlt: 'Wedding reception with couple on the dance floor',
     accentLabel: 'Hip-Hop · R&B · Open Format',
-    suggestedAddOns: ['uplighting', 'secondmic', 'mcsetup'],
+    suggestedAddOns: ['uplighting', 'neonlighting', 'secondmic', 'mcsetup'],
   },
   {
     id: 'mehndi',
@@ -51,7 +52,7 @@ export const EVENTS = [
     imgSrc: '/placeholder.svg?height=480&width=720',
     imgAlt: 'Mehndi evening with guests dancing in warm lighting',
     accentLabel: 'Mehndi · Dholki',
-    suggestedAddOns: ['uplighting', 'livedrums', 'dancing'],
+    suggestedAddOns: ['uplighting', 'neonlighting', 'livedrums', 'dancing'],
   },
   {
     id: 'engagement',
@@ -65,7 +66,7 @@ export const EVENTS = [
     imgSrc: '/placeholder.svg?height=480&width=720',
     imgAlt: 'Engagement party guests celebrating on the dance floor',
     accentLabel: 'Mixed · Open Format',
-    suggestedAddOns: ['uplighting', 'photobooth'],
+    suggestedAddOns: ['uplighting', 'neonlighting', 'photobooth'],
   },
   {
     id: 'full-weekend',
@@ -79,6 +80,6 @@ export const EVENTS = [
     imgSrc: '/placeholder.svg?height=480&width=720',
     imgAlt: 'Full wedding weekend dance floor moments across multiple events',
     accentLabel: 'All Events · One DJ',
-    suggestedAddOns: ['uplighting', 'secondmic', 'mcsetup', 'livedrums'],
+    suggestedAddOns: ['uplighting', 'neonlighting', 'secondmic', 'mcsetup', 'livedrums'],
   },
 ] as const

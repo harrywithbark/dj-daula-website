@@ -48,6 +48,15 @@ export default function Hero() {
         }}
       />
 
+      {/* Neon cyan accent glow — top right corner for energy */}
+      <div
+        className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(0,240,255,0.08) 0%, transparent 60%)',
+        }}
+      />
+
       {/* Top edge red line */}
       <div
         className="absolute top-0 left-0 right-0 h-px bg-daula-red/40"
