@@ -37,7 +37,7 @@ export default function Nav() {
         className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-18"
         aria-label="Primary navigation"
       >
-        <Logo variant="dark" accent="red" />
+        <Logo variant="dark" accent="red" imageOnly />
 
         <ul className="hidden md:flex items-center gap-8" role="list">
           {NAV_LINKS.map((link) => (
@@ -59,7 +59,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className="bg-daula-red text-daula-white text-sm font-semibold tracking-wide px-4 py-2 hover:bg-daula-red/90 transition-all duration-200 hover:shadow-[0_0_12px_rgba(0,240,255,0.3)]"
+            className="bg-daula-red text-daula-white text-sm font-semibold tracking-wide px-4 py-2 hover:bg-daula-red/90 transition-all duration-200 hover:shadow-[0_0_12px_rgba(201,168,76,0.3)]"
             aria-label="Book your date"
           >
             Book Your Date&nbsp;&rarr;

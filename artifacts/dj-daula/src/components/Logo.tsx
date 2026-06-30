@@ -6,6 +6,7 @@ interface LogoProps {
   compact?: boolean
   href?: string
   className?: string
+  imageOnly?: boolean
 }
 
 export default function Logo({
@@ -14,11 +15,20 @@ export default function Logo({
   compact = false,
   href = '/',
   className = '',
+  imageOnly = false,
 }: LogoProps) {
   const textColor = variant === 'dark' ? 'text-daula-white' : 'text-daula-black'
   const underlineColor = accent === 'red' ? 'bg-daula-red' : 'bg-daula-gold'
 
-  const content = compact ? (
+  const imageLogo = (
+    <img
+      src="/logo-da.png"
+      alt="DJ Daula"
+      className={`object-contain ${compact ? 'w-10 h-10' : 'w-12 h-12'}`}
+    />
+  )
+
+  const textLogo = compact ? (
     <span className="relative inline-flex flex-col items-center">
       <span className={`text-2xl font-black tracking-[0.05em] ${textColor} leading-none`}>
         D
@@ -38,6 +48,8 @@ export default function Logo({
       />
     </span>
   )
+
+  const content = imageOnly ? imageLogo : textLogo
 
   if (href) {
     return (
