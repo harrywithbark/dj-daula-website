@@ -46,19 +46,35 @@ export default function Positioning() {
           {PILLARS.map((pillar) => (
             <div
               key={pillar.title}
-              className="group relative px-8 py-8 border-b border-r border-daula-gray-mid overflow-hidden hover:bg-daula-gray transition-colors duration-200"
+              className="group relative px-8 py-8 border-b border-r border-daula-gray-mid overflow-hidden hover:bg-daula-gray transition-colors duration-300"
             >
+              {/* Neon gold left border on hover */}
               <div
-                className="absolute left-0 top-0 bottom-0 w-0.5 bg-daula-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"
+                className="absolute left-0 top-0 bottom-0 w-[2px] scale-y-0 group-hover:scale-y-100 transition-transform duration-400 origin-bottom pointer-events-none"
                 aria-hidden="true"
+                style={{ background: 'linear-gradient(to top, #FFD700, rgba(255,215,0,0.4))' }}
               />
-              <span className="text-xs font-black tracking-widest text-daula-red/40 group-hover:text-daula-red transition-colors duration-200 mb-3 block">
+
+              {/* Subtle purple glow on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                aria-hidden="true"
+                style={{
+                  background: 'radial-gradient(ellipse at 0% 50%, rgba(180,0,255,0.06) 0%, transparent 70%)',
+                }}
+              />
+
+              <span
+                className="text-xs font-black tracking-widest mb-3 block transition-colors duration-300"
+                style={{ color: 'rgba(255,215,0,0.35)' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#FFD700')}
+              >
                 {pillar.number}
               </span>
-              <h3 className="text-lg font-black text-daula-white mb-2 tracking-tight">
+              <h3 className="text-lg font-black text-daula-white mb-2 tracking-tight relative z-10">
                 {pillar.title}
               </h3>
-              <p className="text-sm text-daula-gray-light leading-relaxed">
+              <p className="text-sm text-daula-gray-light leading-relaxed relative z-10">
                 {pillar.body}
               </p>
             </div>

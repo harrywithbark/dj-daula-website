@@ -1,12 +1,17 @@
 import { Link } from 'wouter'
 import { EVENTS } from '@/lib/events-data'
+import { useState } from 'react'
 
 function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
+  const [hovered, setHovered] = useState(false)
+
   return (
     <Link
       href={`/event/${event.id}`}
       className="group relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden bg-daula-black cursor-pointer"
       aria-label={`${event.name} — click to view details`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <img
         src={event.imgSrc}
@@ -14,27 +19,40 @@ function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
         className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
       />
 
-      {/* Gradient overlay — darker at bottom for text readability */}
+      {/* Base overlay */}
       <div
-        className="absolute inset-0 bg-daula-black/30 group-hover:bg-daula-black/40 transition-colors duration-500"
+        className="absolute inset-0 bg-daula-black/30 group-hover:bg-daula-black/45 transition-colors duration-500"
         aria-hidden="true"
       />
+
+      {/* Neon purple ambient wash on hover — like stage uplighting */}
       <div
-        className="absolute inset-0 bg-daula-black/0 group-hover:bg-daula-red/10 transition-colors duration-500"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse at top, rgba(180,0,255,0.18) 0%, transparent 70%)',
+          opacity: hovered ? 1 : 0,
+        }}
       />
 
       {/* Bottom fade for text */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-1/2 bg-daula-black/60 group-hover:bg-daula-black/70 transition-colors duration-500"
-        style={{ background: 'linear-gradient(to top, rgba(15,15,15,0.85) 0%, transparent 100%)' }}
+        className="absolute bottom-0 left-0 right-0 h-2/3 pointer-events-none"
+        style={{ background: 'linear-gradient(to top, rgba(15,15,15,0.92) 0%, rgba(15,15,15,0.4) 60%, transparent 100%)' }}
         aria-hidden="true"
       />
 
       {/* Badge */}
       {event.badge && (
         <div className="absolute top-4 left-4 z-10">
-          <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 ${event.badgeColor}`}>
+          <span
+            className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 ${event.badgeColor}`}
+            style={
+              event.badge === 'Most Popular'
+                ? { backgroundColor: 'rgba(255,215,0,0.12)', color: '#FFD700', border: '1px solid rgba(255,215,0,0.35)' }
+                : undefined
+            }
+          >
             {event.badge}
           </span>
         </div>
@@ -42,24 +60,34 @@ function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
 
       {/* Bold text overlay */}
       <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7 z-10">
-        <p className="text-[10px] font-semibold tracking-widest uppercase text-daula-red mb-2">
+        <p
+          className="text-[10px] font-semibold tracking-widest uppercase mb-2 transition-colors duration-300"
+          style={{ color: hovered ? '#FFD700' : '#CE1F1F' }}
+        >
           {event.accentLabel}
         </p>
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-daula-white tracking-tight leading-none uppercase group-hover:translate-x-1 transition-transform duration-300">
           {event.name}
         </h3>
 
-        {/* Hover arrow */}
-        <div className="mt-4 flex items-center gap-2 text-daula-white/0 group-hover:text-daula-white/80 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+        {/* Hover arrow — neon gold */}
+        <div
+          className="mt-4 flex items-center gap-2 transition-all duration-300 translate-y-2 group-hover:translate-y-0"
+          style={{
+            opacity: hovered ? 1 : 0,
+            color: '#FFD700',
+          }}
+        >
           <span className="text-xs font-semibold tracking-wide">View details</span>
           <span className="text-sm" aria-hidden="true">&rarr;</span>
         </div>
       </div>
 
-      {/* Red bottom line on hover */}
+      {/* Neon gold bottom line on hover */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-1 bg-daula-red scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+        className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
         aria-hidden="true"
+        style={{ background: 'linear-gradient(to right, #FFD700, rgba(255,215,0,0.4))' }}
       />
     </Link>
   )
@@ -100,7 +128,19 @@ export default function EventsPreview() {
         <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <Link
             href="/events"
-            className="text-sm font-semibold text-daula-red hover:text-daula-white transition-colors duration-200 border border-daula-red/30 hover:border-daula-red px-6 py-3"
+            className="text-sm font-semibold transition-colors duration-200 border px-6 py-3"
+            style={{
+              color: '#FFD700',
+              borderColor: 'rgba(255,215,0,0.35)',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = 'rgba(255,215,0,0.8)'
+              e.currentTarget.style.backgroundColor = 'rgba(255,215,0,0.06)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(255,215,0,0.35)'
+              e.currentTarget.style.backgroundColor = 'transparent'
+            }}
           >
             View all services &rarr;
           </Link>

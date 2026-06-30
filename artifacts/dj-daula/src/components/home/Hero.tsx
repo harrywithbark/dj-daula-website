@@ -10,6 +10,7 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center bg-daula-black overflow-hidden"
       aria-label="Hero"
     >
+      {/* Subtle diagonal grain */}
       <div
         className="absolute inset-0 opacity-[0.04]"
         aria-hidden="true"
@@ -24,30 +25,30 @@ export default function Hero() {
         }}
       />
 
+      {/* Purple stage uplighting — top left, like the photo */}
       <div
-        className="absolute inset-0"
+        className="absolute -top-1/3 -left-1/4 w-[700px] h-[700px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          backgroundImage: `url('/placeholder.svg?height=1080&width=1920')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.12,
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.13) 0%, transparent 65%)',
         }}
       />
 
+      {/* Purple uplighting — right side, mirrored */}
+      <div
+        className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.07) 0%, transparent 60%)',
+        }}
+      />
+
+      {/* Red glow at bottom — warmth from the decks */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center bottom, rgba(206,31,31,0.18) 0%, transparent 70%)',
-        }}
-      />
-
-      <div
-        className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
-        aria-hidden="true"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(0,240,255,0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center bottom, rgba(206,31,31,0.20) 0%, transparent 70%)',
         }}
       />
 
@@ -74,9 +75,16 @@ export default function Hero() {
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-balance leading-[0.95]">
           One DJ.{' '}
-          <span className="text-daula-red">Your Night.</span>
+          <span
+            className="text-daula-red"
+            style={{ textShadow: '0 0 40px rgba(206,31,31,0.4)' }}
+          >
+            Your Night.
+          </span>
           <br />
-          No&nbsp;Substitutes.
+          <span style={{ color: '#FFD700', textShadow: '0 0 60px rgba(255,215,0,0.25)' }}>
+            No&nbsp;Substitutes.
+          </span>
         </h1>
 
         <p className="text-base md:text-lg text-daula-gray-light leading-relaxed max-w-xl text-balance">
@@ -87,6 +95,9 @@ export default function Hero() {
           <Link
             href="/contact"
             className="w-full sm:w-auto bg-daula-red text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm hover:bg-daula-red/90 active:scale-[0.98] transition-all duration-200 text-center"
+            style={{ boxShadow: '0 0 0 0 rgba(255,215,0,0)' }}
+            onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 18px rgba(255,215,0,0.30)')}
+            onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 0 rgba(255,215,0,0)')}
           >
             Book Your Date &rarr;
           </Link>

@@ -1,14 +1,23 @@
 import { Link } from 'wouter'
 
-const SHOW_SCARCITY_NOTE = false
+const SHOW_SCARCITY_NOTE = true
 
 export default function BookCta() {
   return (
     <section
-      className="bg-daula-gray py-20 md:py-28 border-b border-daula-gray-mid"
+      className="relative bg-daula-gray py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
       aria-labelledby="book-cta-heading"
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-8">
+      {/* Purple ambient glow — top right corner, like venue uplighting */}
+      <div
+        className="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.10) 0%, transparent 65%)',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
         <div className="max-w-3xl">
           <h2
             id="book-cta-heading"
@@ -23,7 +32,7 @@ export default function BookCta() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            <div className="bg-daula-black border border-daula-gray-mid p-5 flex flex-col gap-3">
+            <div className="bg-daula-black border border-daula-gray-mid p-5 flex flex-col gap-3 hover:border-[rgba(255,215,0,0.25)] transition-colors duration-300">
               <p className="text-xs font-semibold tracking-widest uppercase text-daula-red">
                 Fill the form
               </p>
@@ -38,7 +47,7 @@ export default function BookCta() {
               </Link>
             </div>
 
-            <div className="bg-daula-black border border-daula-gray-mid p-5 flex flex-col gap-3">
+            <div className="bg-daula-black border border-daula-gray-mid p-5 flex flex-col gap-3 hover:border-[rgba(255,215,0,0.25)] transition-colors duration-300">
               <p className="text-xs font-semibold tracking-widest uppercase text-daula-red">
                 WhatsApp
               </p>
@@ -55,7 +64,7 @@ export default function BookCta() {
               </a>
             </div>
 
-            <div className="bg-daula-black border border-daula-gray-mid p-5 flex flex-col gap-3">
+            <div className="bg-daula-black border border-daula-gray-mid p-5 flex flex-col gap-3 hover:border-[rgba(255,215,0,0.25)] transition-colors duration-300">
               <p className="text-xs font-semibold tracking-widest uppercase text-daula-red">
                 Email
               </p>
@@ -74,7 +83,10 @@ export default function BookCta() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/contact"
-              className="bg-daula-red text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm hover:bg-daula-red/90 transition-colors duration-200 text-center"
+              className="bg-daula-red text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm hover:bg-daula-red/90 transition-all duration-200 text-center"
+              style={{ boxShadow: '0 0 0 0 rgba(255,215,0,0)', transition: 'background 0.2s, box-shadow 0.3s' }}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 20px rgba(255,215,0,0.25)')}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 0 rgba(255,215,0,0)')}
             >
               Check Availability &rarr;
             </Link>
@@ -89,7 +101,7 @@ export default function BookCta() {
           </div>
 
           {SHOW_SCARCITY_NOTE && (
-            <p className="mt-6 text-xs text-daula-gold tracking-wide">
+            <p className="mt-6 text-xs tracking-wide" style={{ color: '#FFD700' }}>
               Currently booking 2026 and 2027 dates &mdash; limited weekends available.
             </p>
           )}
