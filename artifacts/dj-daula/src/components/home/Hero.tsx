@@ -75,16 +75,9 @@ export default function Hero() {
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-balance leading-[0.95]">
           One DJ.{' '}
-          <span
-            className="text-daula-red"
-            style={{ textShadow: '0 0 40px rgba(206,31,31,0.4)' }}
-          >
-            Your Night.
-          </span>
+          <span className="text-daula-red">Your Night.</span>
           <br />
-          <span style={{ color: '#FFD700', textShadow: '0 0 60px rgba(255,215,0,0.25)' }}>
-            No&nbsp;Substitutes.
-          </span>
+          No&nbsp;Substitutes.
         </h1>
 
         <p className="text-base md:text-lg text-daula-gray-light leading-relaxed max-w-xl text-balance">
@@ -95,9 +88,6 @@ export default function Hero() {
           <Link
             href="/contact"
             className="w-full sm:w-auto bg-daula-red text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm hover:bg-daula-red/90 active:scale-[0.98] transition-all duration-200 text-center"
-            style={{ boxShadow: '0 0 0 0 rgba(255,215,0,0)' }}
-            onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 18px rgba(255,215,0,0.30)')}
-            onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 0 rgba(255,215,0,0)')}
           >
             Book Your Date &rarr;
           </Link>
