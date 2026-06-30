@@ -29,13 +29,15 @@ export default function Positioning() {
       className="relative bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
       aria-labelledby="positioning-heading"
     >
+      {/* Neon glow — right side */}
       <div
-        className="absolute -left-1/4 top-1/2 -translate-y-1/2 w-[500px] h-[600px] rounded-full pointer-events-none"
+        className="absolute -right-1/4 top-1/2 -translate-y-1/2 w-[500px] h-[600px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(0,240,255,0.09) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.18) 0%, transparent 60%)',
         }}
       />
+
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-16">
@@ -45,7 +47,7 @@ export default function Positioning() {
             >
               When you book Daula,
               <br />
-              <span className="text-daula-red">you get Daula.</span>
+              <span className="neon-text-red">you get Daula.</span>
             </h2>
             <p className="text-daula-gray-light text-sm max-w-xs leading-relaxed">
               Four reasons the couples who do their research keep coming back to the same name.
@@ -62,11 +64,15 @@ export default function Positioning() {
               <div
                 className="absolute left-0 top-0 bottom-0 w-0.5 bg-daula-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"
                 aria-hidden="true"
+                style={{ boxShadow: '0 0 8px rgba(206,31,31,0.7)' }}
               />
-              <span className="text-xs font-black tracking-widest text-daula-red/40 group-hover:text-daula-red transition-colors duration-200 mb-3 block">
+              <span
+                className="text-xs font-black tracking-widest mb-3 block transition-colors duration-200"
+                style={{ color: 'rgba(206,31,31,0.3)' }}
+              >
                 {pillar.number}
               </span>
-              <h3 className="text-lg font-black text-daula-white mb-2 tracking-tight relative z-10">
+              <h3 className="text-lg font-black text-daula-white mb-2 tracking-tight relative z-10 group-hover:text-daula-red transition-colors duration-300">
                 {pillar.title}
               </h3>
               <p className="text-sm text-daula-gray-light leading-relaxed relative z-10">

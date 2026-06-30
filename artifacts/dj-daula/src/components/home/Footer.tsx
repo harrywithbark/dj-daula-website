@@ -1,5 +1,6 @@
 import { Link } from 'wouter'
-import Logo from '@/components/Logo'
+import FooterLogo from '@/components/FooterLogo'
+import BeatVisualizer from '@/components/BeatVisualizer'
 import AftershockBadge from '@/components/AftershockBadge'
 
 const PAGE_LINKS = [
@@ -67,24 +68,44 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-daula-black border-t border-daula-gray-mid" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-          <div className="flex flex-col gap-4">
-            <Logo variant="dark" accent="gold" imageOnly />
+    <footer
+      className="relative bg-daula-black border-t border-daula-gray-mid overflow-hidden"
+      role="contentinfo"
+    >
+      {/* Top beat visualizer strip */}
+      <BeatVisualizer barCount={80} height={36} className="opacity-70" />
+
+      {/* Neon red accent line */}
+      <div
+        className="h-px w-full"
+        aria-hidden="true"
+        style={{
+          background: 'linear-gradient(to right, transparent, #CE1F1F 30%, #CE1F1F 70%, transparent)',
+          boxShadow: '0 0 8px 1px rgba(206,31,31,0.5), 0 0 20px 4px rgba(206,31,31,0.15)',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+          {/* Brand column */}
+          <div className="md:col-span-5 flex flex-col gap-5">
+            <FooterLogo />
             <p className="text-sm text-daula-gray-light leading-relaxed">
               Surrey&apos;s South Asian Wedding DJ
               <br />
               Available Worldwide
             </p>
-            <div className="flex items-center gap-4 mt-2">
+            <p className="text-xs text-daula-gray-light leading-relaxed max-w-xs">
+              15 years behind the decks. 500+ events. One DJ — no substitutes, ever. From Bhangra to Bollywood and everything between.
+            </p>
+            <div className="flex items-center gap-4 mt-1">
               {SOCIALS.map(({ label, href, Icon }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-daula-gray-light hover:text-daula-white transition-colors duration-200"
+                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200 hover:scale-110 transform"
                   aria-label={label}
                 >
                   <Icon />
@@ -93,8 +114,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-daula-gray-light mb-4">
+          {/* Pages */}
+          <div className="md:col-span-3">
+            <p
+              className="text-xs font-semibold tracking-widest uppercase mb-4"
+              style={{ color: '#999' }}
+            >
               Pages
             </p>
             <ul className="flex flex-col gap-2" role="list">
@@ -111,9 +136,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-daula-gray-light mb-4">
-              Contact
+          {/* Contact */}
+          <div className="md:col-span-4">
+            <p
+              className="text-xs font-semibold tracking-widest uppercase mb-4"
+              style={{ color: '#999' }}
+            >
+              Reach Daula
             </p>
             <ul className="flex flex-col gap-2 text-sm" role="list">
               <li>
@@ -121,15 +150,15 @@ export default function Footer() {
                   href="https://wa.me/17780000000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-daula-gray-light hover:text-daula-white transition-colors duration-200"
+                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200"
                 >
-                  WhatsApp
+                  WhatsApp — fastest response
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:bookings@djdaula.com"
-                  className="text-daula-gray-light hover:text-daula-white transition-colors duration-200"
+                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200"
                 >
                   bookings@djdaula.com
                 </a>
@@ -139,15 +168,16 @@ export default function Footer() {
                   href="https://instagram.com/dj_daula"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-daula-gray-light hover:text-daula-white transition-colors duration-200"
+                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200"
                 >
-                  @dj_daula
+                  @dj_daula on Instagram
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-daula-gray-mid flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-xs text-daula-gray-light">
             &copy; 2026 DJ Daula &middot; Surrey, BC

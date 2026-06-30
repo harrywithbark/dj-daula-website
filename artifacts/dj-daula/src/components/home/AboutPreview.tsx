@@ -42,7 +42,7 @@ export default function AboutPreview() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/contact"
-                  className="bg-daula-red text-daula-white text-sm font-semibold tracking-wide px-6 py-3 hover:bg-daula-red/90 transition-colors duration-200 text-center"
+                  className="text-daula-white text-sm font-semibold tracking-wide px-6 py-3 text-center neon-btn-red"
                 >
                   Let&apos;s talk about your wedding &rarr;
                 </Link>
@@ -64,14 +64,15 @@ export default function AboutPreview() {
                 </div>
               )}
               <img
-                src="/placeholder.svg?height=800&width=640"
-                alt="DJ Daula behind the decks at a Sangeet — mid-set action shot"
+                src="/dj-booth.jpg"
+                alt="DJ Daula behind the decks at a packed wedding reception — mid-set action shot"
                 onLoad={() => setImgLoaded(true)}
                 className={`object-cover w-full h-full transition-opacity duration-500 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
               />
               <div
-                className="absolute bottom-0 left-0 w-1 h-16 bg-daula-red"
+                className="absolute bottom-0 left-0 w-1 h-16"
                 aria-hidden="true"
+                style={{ background: '#CE1F1F', boxShadow: '0 0 12px rgba(206,31,31,0.8)' }}
               />
             </div>
           </ScrollReveal>

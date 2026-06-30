@@ -90,7 +90,7 @@ export default function BookCta() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/contact"
-                className="bg-daula-red text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm hover:bg-daula-red/90 transition-colors duration-200 text-center"
+                className="text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm text-center neon-btn-red"
               >
                 Check Availability &rarr;
               </Link>
@@ -98,7 +98,7 @@ export default function BookCta() {
                 href="https://wa.me/17780000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-daula-white/20 text-daula-white font-medium tracking-wide px-8 py-3.5 text-sm hover:border-daula-white/50 hover:bg-daula-white/5 transition-all duration-200 text-center"
+                className="text-daula-white font-medium tracking-wide px-8 py-3.5 text-sm text-center neon-btn-outline"
               >
                 Message on WhatsApp &rarr;
               </a>

@@ -1,0 +1,4 @@
+- [Neon design system](neon-design.md) — Hero text uses `.neon-text-red` class with pulsing text-shadow animation. Buttons use `.neon-btn-red` and `.neon-btn-outline` with box-shadow glow. All CTAs, nav button, and mobile CTA share these styles.
+- [Footer logo approach](footer-logo.md) — Dropped image logo in footer (cropped badly at small sizes). Built custom `FooterLogo` SVG with A-in-circle mark + "DJ DAULA" text — scales clean, reads instantly.
+- [Beat visualizer placement](beat-visualizer.md) — `BeatVisualizer` canvas bars go between major sections (hero→stats, events→music) — NOT on every divider. Uses smooth easing targets per bar, red/purple/gold color cycle.
+- [Marquee ticker](marquee-ticker.md) — `MarqueeTicker` placed between hero and positioning sections with genres/locations. Speed ~1.0–1.2. Red dot separators. Smooth requestAnimationFrame loop.
