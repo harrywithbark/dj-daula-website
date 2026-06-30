@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "DJ Daula"
+version = "1.0.0"
+id = "artifacts/dj-daula"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24709
+
+[services.development]
+run = "pnpm --filter @workspace/dj-daula run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dj-daula", "run", "build" ]
+publicDir = "artifacts/dj-daula/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24709"
+BASE_PATH = "/"
