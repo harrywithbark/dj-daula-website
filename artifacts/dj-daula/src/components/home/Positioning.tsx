@@ -1,3 +1,5 @@
+import ScrollReveal, { StaggerContainer } from '@/components/ScrollReveal'
+
 const PILLARS = [
   {
     number: '01',
@@ -27,7 +29,6 @@ export default function Positioning() {
       className="relative bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
       aria-labelledby="positioning-heading"
     >
-      {/* === POSITIONING: Cyan wash from the left side === */}
       <div
         className="absolute -left-1/4 top-1/2 -translate-y-1/2 w-[500px] h-[600px] rounded-full pointer-events-none"
         aria-hidden="true"
@@ -36,21 +37,23 @@ export default function Positioning() {
         }}
       />
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-16">
-          <h2
-            id="positioning-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-daula-white text-balance"
-          >
-            When you book Daula,
-            <br />
-            <span className="text-daula-red">you get Daula.</span>
-          </h2>
-          <p className="text-daula-gray-light text-sm max-w-xs leading-relaxed">
-            Four reasons the couples who do their research keep coming back to the same name.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-16">
+            <h2
+              id="positioning-heading"
+              className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-daula-white text-balance"
+            >
+              When you book Daula,
+              <br />
+              <span className="text-daula-red">you get Daula.</span>
+            </h2>
+            <p className="text-daula-gray-light text-sm max-w-xs leading-relaxed">
+              Four reasons the couples who do their research keep coming back to the same name.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-daula-gray-mid">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-daula-gray-mid" staggerDelay={0.12}>
           {PILLARS.map((pillar) => (
             <div
               key={pillar.title}
@@ -71,7 +74,7 @@ export default function Positioning() {
               </p>
             </div>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

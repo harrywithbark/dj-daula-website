@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react'
 
 export default function Preloader() {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const [fade, setFade] = useState(false)
 
   useEffect(() => {
+    const seen = sessionStorage.getItem('daula-preloader-seen')
+    if (seen) return
+    setShow(true)
     const timer = setTimeout(() => {
       setFade(true)
-      setTimeout(() => setShow(false), 600)
+      setTimeout(() => {
+        setShow(false)
+        sessionStorage.setItem('daula-preloader-seen', '1')
+      }, 600)
     }, 1200)
     return () => clearTimeout(timer)
   }, [])

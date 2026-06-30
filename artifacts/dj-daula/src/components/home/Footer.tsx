@@ -71,7 +71,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           <div className="flex flex-col gap-4">
-            <Logo variant="dark" accent="gold" />
+            <Logo variant="dark" accent="gold" imageOnly />
             <p className="text-sm text-daula-gray-light leading-relaxed">
               Surrey&apos;s South Asian Wedding DJ
               <br />
