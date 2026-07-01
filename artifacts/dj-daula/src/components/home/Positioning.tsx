@@ -1,4 +1,5 @@
 import ScrollReveal, { StaggerContainer } from '@/components/ScrollReveal'
+import TiltCard from '@/components/TiltCard'
 
 const PILLARS = [
   {
@@ -26,59 +27,67 @@ const PILLARS = [
 export default function Positioning() {
   return (
     <section
-      className="relative bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
+      className="relative section-light py-20 md:py-28 border-b border-black/10 overflow-hidden"
       aria-labelledby="positioning-heading"
     >
-      {/* Neon glow — right side */}
+      {/* Subtle warm red glow — bottom right */}
       <div
-        className="absolute -right-1/4 top-1/2 -translate-y-1/2 w-[500px] h-[600px] rounded-full pointer-events-none"
+        className="absolute -right-1/4 bottom-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.18) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center, rgba(206,31,31,0.04) 0%, transparent 65%)',
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-8">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 relative">
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-16">
             <h2
               id="positioning-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-daula-white text-balance"
+              className="text-display-lg text-balance"
+              style={{ color: '#111111' }}
             >
-              When you book Daula,
-              <br />
-              <span className="neon-text-red">you get Daula.</span>
+              When you book Daula,{' '}
+              <span className="text-daula-red" style={{ textShadow: '0 0 12px rgba(206,31,31,0.18)' }}>
+                you get Daula.
+              </span>
             </h2>
-            <p className="text-daula-gray-light text-sm max-w-xs leading-relaxed">
+            <p className="text-sm max-w-xs leading-relaxed" style={{ color: '#666' }}>
               Four reasons the couples who do their research keep coming back to the same name.
             </p>
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-daula-gray-mid" staggerDelay={0.12}>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.12}>
           {PILLARS.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="group relative px-8 py-8 border-b border-r border-daula-gray-mid overflow-hidden hover:bg-daula-gray transition-colors duration-300"
-            >
+            <TiltCard key={pillar.title} maxTilt={5} scale={1.015}>
               <div
-                className="absolute left-0 top-0 bottom-0 w-0.5 bg-daula-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"
-                aria-hidden="true"
-                style={{ boxShadow: '0 0 8px rgba(206,31,31,0.7)' }}
-              />
-              <span
-                className="text-xs font-black tracking-widest mb-3 block transition-colors duration-200"
-                style={{ color: 'rgba(206,31,31,0.3)' }}
+                className="glass-card-light group relative p-8 overflow-hidden cursor-default h-full"
+                style={{ borderRadius: 0 }}
               >
-                {pillar.number}
-              </span>
-              <h3 className="text-lg font-black text-daula-white mb-2 tracking-tight relative z-10 group-hover:text-daula-red transition-colors duration-300">
-                {pillar.title}
-              </h3>
-              <p className="text-sm text-daula-gray-light leading-relaxed relative z-10">
-                {pillar.body}
-              </p>
-            </div>
+                {/* Left red accent bar */}
+                <div
+                  className="absolute left-0 top-0 bottom-0 w-0.5 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom"
+                  aria-hidden="true"
+                  style={{ background: '#CE1F1F', boxShadow: '0 0 8px rgba(206,31,31,0.5)' }}
+                />
+                <span
+                  className="text-xs font-black tracking-widest mb-3 block"
+                  style={{ color: 'rgba(206,31,31,0.4)' }}
+                >
+                  {pillar.number}
+                </span>
+                <h3
+                  className="text-lg font-black mb-2 tracking-tight group-hover:text-daula-red transition-colors duration-300"
+                  style={{ color: '#111111' }}
+                >
+                  {pillar.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#555' }}>
+                  {pillar.body}
+                </p>
+              </div>
+            </TiltCard>
           ))}
         </StaggerContainer>
       </div>

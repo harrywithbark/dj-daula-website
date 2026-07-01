@@ -2,11 +2,13 @@ import { Link } from 'wouter'
 import { EVENTS } from '@/lib/events-data'
 import { useState } from 'react'
 import ScrollReveal from '@/components/ScrollReveal'
+import TiltCard from '@/components/TiltCard'
 
 function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
   const [hovered, setHovered] = useState(false)
 
   return (
+    <TiltCard maxTilt={6} scale={1.02}>
     <Link
       href={`/event/${event.id}`}
       className="group relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden bg-daula-black cursor-pointer"
@@ -29,7 +31,7 @@ function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at top, rgba(180,0,255,0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at top, rgba(206,31,31,0.08) 0%, transparent 70%)',
           opacity: hovered ? 1 : 0,
         }}
       />
@@ -85,26 +87,27 @@ function EventCard({ event }: { event: (typeof EVENTS)[number] }) {
         style={{ background: 'linear-gradient(to right, #FFD700, rgba(255,215,0,0.4))' }}
       />
 
- {/* Border glow on hover */}
+      {/* Border glow on hover */}
       <div
         className="absolute inset-0 border border-transparent group-hover:border-daula-red/40 transition-colors duration-500 pointer-events-none"
         aria-hidden="true"
       />
     </Link>
+    </TiltCard>
   )
 }
 
 export default function EventsPreview() {
   return (
     <section
-      className="relative bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
+      className="relative bg-mesh-dark py-20 md:py-28 border-b border-daula-gray-mid overflow-hidden"
       aria-labelledby="events-heading"
     >
       <div
         className="absolute -bottom-1/4 -right-1/4 w-[700px] h-[500px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(180,0,255,0.12) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center, rgba(206,31,31,0.04) 0%, transparent 60%)',
         }}
       />
       <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -112,11 +115,11 @@ export default function EventsPreview() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
               <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red mb-3">
-                Services
+                Events
               </p>
               <h2
                 id="events-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-daula-white text-balance"
+                className="text-display-lg text-daula-white text-balance"
               >
                 Every night of your wedding
                 <br className="hidden md:block" /> weekend, covered.

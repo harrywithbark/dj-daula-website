@@ -5,7 +5,6 @@ import Positioning from '@/components/home/Positioning'
 import EventsPreview from '@/components/home/EventsPreview'
 import MarqueeTicker from '@/components/MarqueeTicker'
 import MusicPreview from '@/components/home/MusicPreview'
-import BeatVisualizer from '@/components/BeatVisualizer'
 import GalleryPreview from '@/components/home/GalleryPreview'
 import Testimonials from '@/components/home/Testimonials'
 import AboutPreview from '@/components/home/AboutPreview'
@@ -37,9 +36,6 @@ export default function HomePage() {
       <main>
         <Hero />
 
-        {/* Beat strip after hero — like a club LED wall */}
-        <BeatVisualizer barCount={96} height={28} className="opacity-60" />
-
         <CredibilityBar />
 
         {/* Scrolling marquee between sections */}
@@ -48,9 +44,6 @@ export default function HomePage() {
         <Positioning />
 
         <EventsPreview />
-
-        {/* Second beat strip — between events and music */}
-        <BeatVisualizer barCount={96} height={24} className="opacity-50" />
 
         <MusicPreview />
 

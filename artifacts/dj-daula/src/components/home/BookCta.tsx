@@ -13,7 +13,7 @@ export default function BookCta() {
         className="absolute -bottom-1/3 -left-1/4 w-[600px] h-[500px] rounded-full pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(255,215,0,0.10) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center, rgba(206,31,31,0.05) 0%, transparent 60%)',
         }}
       />
 

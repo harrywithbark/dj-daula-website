@@ -64,12 +64,12 @@ const MIX_SECTIONS = [
 export default function MusicPage() {
   return (
     <PageShell>
-      <section className="bg-daula-black py-16 md:py-20 border-b border-daula-gray-mid">
+      <section className="bg-mesh-dark py-16 md:py-20 border-b border-daula-gray-mid">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red mb-3">
             Music &amp; Mixes
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-daula-white text-balance">
+          <h1 className="text-display-xl text-daula-white text-balance">
             This is what your night sounds like.
           </h1>
         </div>

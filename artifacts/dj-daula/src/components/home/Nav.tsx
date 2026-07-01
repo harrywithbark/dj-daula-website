@@ -1,9 +1,9 @@
 import { Link, useLocation } from 'wouter'
 import { useEffect, useState } from 'react'
-import Logo from '@/components/Logo'
 
 const NAV_LINKS = [
   { label: 'Music', href: '/music' },
+  { label: 'Services', href: '/services' },
   { label: 'Events', href: '/events' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
@@ -26,29 +26,38 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-daula-black/95 backdrop-blur-sm border-b border-daula-red/40'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? 'backdrop-blur-sm border-b' : 'border-b border-transparent'
       }`}
+      style={scrolled
+        ? { background: 'rgba(255,255,255,0.97)', borderColor: 'rgba(206,31,31,0.25)' }
+        : { background: 'transparent' }
+      }
       role="banner"
     >
       <nav
         className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-18"
         aria-label="Primary navigation"
       >
-        <Logo variant="dark" accent="red" imageOnly />
+        <Link href="/" aria-label="DJ Daula — home">
+          <img
+            src="/daula-logo-nav.png"
+            alt="DJ Daula"
+            className="h-14 w-auto object-contain"
+          />
+        </Link>
 
         <ul className="hidden md:flex items-center gap-8" role="list">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                className={`text-sm font-medium tracking-wide transition-colors duration-500 ${
                   pathname === link.href
-                    ? 'text-daula-white'
-                    : 'text-daula-gray-light hover:text-daula-white'
+                    ? 'text-daula-red'
+                    : 'hover:text-daula-red'
                 }`}
+                style={pathname === link.href ? {} : { color: scrolled ? '#333' : '#fff' }}
               >
                 {link.label}
               </Link>
@@ -73,13 +82,16 @@ export default function Nav() {
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span
-              className={`block w-6 h-[2px] bg-daula-white transition-transform duration-200 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}
+              className={`block w-6 h-[2px] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`}
+              style={{ background: scrolled ? '#222' : '#fff' }}
             />
             <span
-              className={`block w-6 h-[2px] bg-daula-white transition-opacity duration-200 ${menuOpen ? 'opacity-0' : ''}`}
+              className={`block w-6 h-[2px] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+              style={{ background: scrolled ? '#222' : '#fff' }}
             />
             <span
-              className={`block w-6 h-[2px] bg-daula-white transition-transform duration-200 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}
+              className={`block w-6 h-[2px] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}
+              style={{ background: scrolled ? '#222' : '#fff' }}
             />
           </button>
         </div>
@@ -88,18 +100,21 @@ export default function Nav() {
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-daula-black border-t border-daula-gray-mid px-5 pb-6 pt-4"
+          className="md:hidden border-t px-5 pb-6 pt-4"
+          style={{ background: '#fff', borderColor: 'rgba(0,0,0,0.08)' }}
         >
           <ul className="flex flex-col gap-1" role="list">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`block py-3 text-base font-medium tracking-wide border-b border-daula-gray-mid transition-colors duration-200 ${
-                    pathname === link.href
-                      ? 'text-daula-white'
-                      : 'text-daula-gray-light hover:text-daula-white'
+                  className={`block py-3 text-base font-medium tracking-wide border-b transition-colors duration-200 ${
+                    pathname === link.href ? 'text-daula-red' : 'hover:text-daula-red'
                   }`}
+                  style={{
+                    color: pathname === link.href ? undefined : '#333',
+                    borderColor: 'rgba(0,0,0,0.08)',
+                  }}
                 >
                   {link.label}
                 </Link>

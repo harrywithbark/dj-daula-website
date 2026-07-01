@@ -1,10 +1,9 @@
 import { Link } from 'wouter'
-import FooterLogo from '@/components/FooterLogo'
-import BeatVisualizer from '@/components/BeatVisualizer'
 import AftershockBadge from '@/components/AftershockBadge'
 
 const PAGE_LINKS = [
   { label: 'Music', href: '/music' },
+  { label: 'Services', href: '/services' },
   { label: 'Events', href: '/events' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
@@ -69,33 +68,37 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer
-      className="relative bg-daula-black border-t border-daula-gray-mid overflow-hidden"
+      className="relative section-light border-t overflow-hidden"
+      style={{ borderColor: 'rgba(0,0,0,0.1)' }}
       role="contentinfo"
     >
-      {/* Top beat visualizer strip */}
-      <BeatVisualizer barCount={80} height={36} className="opacity-70" />
-
-      {/* Neon red accent line */}
+      {/* Red accent line */}
       <div
         className="h-px w-full"
         aria-hidden="true"
         style={{
           background: 'linear-gradient(to right, transparent, #CE1F1F 30%, #CE1F1F 70%, transparent)',
-          boxShadow: '0 0 8px 1px rgba(206,31,31,0.5), 0 0 20px 4px rgba(206,31,31,0.15)',
+          boxShadow: '0 0 6px 1px rgba(206,31,31,0.3)',
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-10 relative" style={{ zIndex: 'var(--z-base)' as React.CSSProperties['zIndex'] }}>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
+
           {/* Brand column */}
           <div className="md:col-span-5 flex flex-col gap-5">
-            <FooterLogo />
-            <p className="text-sm text-daula-gray-light leading-relaxed">
+            <img
+              src="/daula-logo-footer.png"
+              alt="DJ Daula logo"
+              className="h-16 w-auto object-contain"
+              style={{ maxWidth: '180px' }}
+            />
+            <p className="text-sm leading-relaxed" style={{ color: '#444' }}>
               Surrey&apos;s South Asian Wedding DJ
               <br />
               Available Worldwide
             </p>
-            <p className="text-xs text-daula-gray-light leading-relaxed max-w-xs">
+            <p className="text-xs leading-relaxed max-w-xs" style={{ color: '#666' }}>
               15 years behind the decks. 500+ events. One DJ — no substitutes, ever. From Bhangra to Bollywood and everything between.
             </p>
             <div className="flex items-center gap-4 mt-1">
@@ -105,7 +108,8 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200 hover:scale-110 transform"
+                  className="hover:text-daula-red transition-colors duration-200 hover:scale-110 transform"
+                  style={{ color: '#666' }}
                   aria-label={label}
                 >
                   <Icon />
@@ -116,10 +120,7 @@ export default function Footer() {
 
           {/* Pages */}
           <div className="md:col-span-3">
-            <p
-              className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: '#999' }}
-            >
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#999' }}>
               Pages
             </p>
             <ul className="flex flex-col gap-2" role="list">
@@ -127,7 +128,8 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-daula-gray-light hover:text-daula-white transition-colors duration-200"
+                    className="text-sm hover:text-daula-red transition-colors duration-200"
+                    style={{ color: '#444' }}
                   >
                     {link.label}
                   </Link>
@@ -138,38 +140,25 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-4">
-            <p
-              className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: '#999' }}
-            >
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#999' }}>
               Reach Daula
             </p>
             <ul className="flex flex-col gap-2 text-sm" role="list">
               <li>
-                <a
-                  href="https://wa.me/17780000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200"
-                >
+                <a href="https://wa.me/17780000000" target="_blank" rel="noopener noreferrer"
+                  className="hover:text-daula-red transition-colors duration-200" style={{ color: '#444' }}>
                   WhatsApp — fastest response
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:bookings@djdaula.com"
-                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200"
-                >
+                <a href="mailto:bookings@djdaula.com"
+                  className="hover:text-daula-red transition-colors duration-200" style={{ color: '#444' }}>
                   bookings@djdaula.com
                 </a>
               </li>
               <li>
-                <a
-                  href="https://instagram.com/dj_daula"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-daula-gray-light hover:text-daula-red transition-colors duration-200"
-                >
+                <a href="https://instagram.com/dj_daula" target="_blank" rel="noopener noreferrer"
+                  className="hover:text-daula-red transition-colors duration-200" style={{ color: '#444' }}>
                   @dj_daula on Instagram
                 </a>
               </li>
@@ -178,8 +167,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-daula-gray-mid flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p className="text-xs text-daula-gray-light">
+        <div className="mt-12 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(0,0,0,0.1)' }}>
+          <p className="text-xs" style={{ color: '#888' }}>
             &copy; 2026 DJ Daula &middot; Surrey, BC
           </p>
           <AftershockBadge />

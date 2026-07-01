@@ -31,12 +31,13 @@ const REFERRAL_OPTIONS = [
 
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
-const inputClass = 'w-full bg-daula-black border border-daula-gray-mid text-daula-white text-sm px-4 py-3 focus:outline-none focus:border-daula-white/50 placeholder:text-daula-gray-light/50 transition-colors duration-200'
+const inputClass = 'w-full bg-white border text-sm px-4 py-3 focus:outline-none transition-colors duration-200 placeholder:text-gray-400'
+const inputStyle = { borderColor: 'rgba(0,0,0,0.18)', color: '#111' }
 
 function FormField({ label, required, id, children }: { label: string; required?: boolean; id: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-sm font-medium text-daula-white">
+      <label htmlFor={id} className="text-sm font-medium" style={{ color: '#111' }}>
         {label}
         {required && <span className="text-daula-red ml-1" aria-label="required">*</span>}
       </label>
@@ -115,12 +116,12 @@ export default function ContactPage() {
 
   return (
     <PageShell>
-      <section className="bg-daula-black py-16 md:py-20 border-b border-daula-gray-mid">
+      <section className="bg-mesh-dark py-16 md:py-20 border-b border-daula-gray-mid">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red mb-3">
             Book / Inquire
           </p>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-daula-white text-balance mb-3">
+          <h1 className="text-display-lg text-daula-white text-balance mb-3">
             Let&apos;s check your date.
           </h1>
           <p className="text-daula-gray-light text-base">
@@ -134,7 +135,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-daula-gray py-12 md:py-16 border-b border-daula-gray-mid">
+      <section className="section-light py-12 md:py-16 border-b border-black/10">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
             <div className="lg:col-span-2">
@@ -169,6 +170,7 @@ export default function ContactPage() {
                         autoComplete="given-name"
                         placeholder="Your first & last name"
                         className={inputClass}
+                        style={inputStyle}
                         required
                       />
                     </FormField>
@@ -180,6 +182,7 @@ export default function ContactPage() {
                         autoComplete="off"
                         placeholder="Partner's first & last name"
                         className={inputClass}
+                        style={inputStyle}
                       />
                     </FormField>
                   </div>
@@ -192,7 +195,7 @@ export default function ContactPage() {
                         type="date"
                         className={inputClass}
                         required
-                        style={{ colorScheme: 'dark' }}
+                        style={{ ...inputStyle, colorScheme: 'light' }}
                       />
                     </FormField>
                     <FormField label="Venue (if confirmed)" id="venue">
@@ -202,12 +205,13 @@ export default function ContactPage() {
                         type="text"
                         placeholder="Venue name or city"
                         className={inputClass}
+                        style={inputStyle}
                       />
                     </FormField>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <p className="text-sm font-medium text-daula-white">
+                    <p className="text-sm font-medium" style={{ color: '#111' }}>
                       Events needed <span className="text-daula-red ml-1" aria-label="required">*</span>
                     </p>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -221,9 +225,10 @@ export default function ContactPage() {
                             aria-pressed={checked}
                             className={`px-3 py-2.5 text-xs font-medium text-left transition-colors duration-200 border ${
                               checked
-                                ? 'bg-daula-red border-daula-red text-daula-white'
-                                : 'bg-daula-black border-daula-gray-mid text-daula-gray-light hover:border-daula-white/30 hover:text-daula-white'
+                                ? 'bg-daula-red border-daula-red text-white'
+                                : ''
                             }`}
+                            style={!checked ? { borderColor: 'rgba(0,0,0,0.18)', color: '#555', background: 'white' } : undefined}
                           >
                             {option}
                           </button>
@@ -238,6 +243,7 @@ export default function ContactPage() {
                         id="guestCount"
                         name="guestCount"
                         className={`${inputClass} cursor-pointer`}
+                        style={inputStyle}
                         defaultValue=""
                       >
                         <option value="" disabled>Select a range</option>
@@ -251,6 +257,7 @@ export default function ContactPage() {
                         id="referralSource"
                         name="referralSource"
                         className={`${inputClass} cursor-pointer`}
+                        style={inputStyle}
                         defaultValue=""
                       >
                         <option value="" disabled>Select one</option>
@@ -282,42 +289,42 @@ export default function ContactPage() {
 
             <aside className="flex flex-col gap-6" aria-label="Alternative contact methods">
               <div>
-                <p className="text-xs font-semibold tracking-widest uppercase text-daula-gray-light mb-4">
+                <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#888' }}>
                   Other ways to reach Daula
                 </p>
 
                 <div className="flex flex-col gap-4">
-                  <div className="bg-daula-black border border-daula-gray-mid p-5">
-                    <p className="text-sm font-semibold text-daula-white mb-1">WhatsApp</p>
-                    <p className="text-xs text-daula-gray-light mb-3">
+                  <div className="glass-card-light p-5">
+                    <p className="text-sm font-semibold mb-1" style={{ color: '#111' }}>WhatsApp</p>
+                    <p className="text-xs mb-3" style={{ color: '#666' }}>
                       Fastest response &mdash; same day.
                     </p>
                     <a
                       href="https://wa.me/17780000000"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-daula-red hover:text-daula-white transition-colors duration-200"
+                      className="text-xs font-semibold text-daula-red hover:opacity-80 transition-opacity duration-200"
                     >
                       Message on WhatsApp &rarr;
                     </a>
                   </div>
 
-                  <div className="bg-daula-black border border-daula-gray-mid p-5">
-                    <p className="text-sm font-semibold text-daula-white mb-1">Email</p>
-                    <p className="text-xs text-daula-gray-light mb-3">
+                  <div className="glass-card-light p-5">
+                    <p className="text-sm font-semibold mb-1" style={{ color: '#111' }}>Email</p>
+                    <p className="text-xs mb-3" style={{ color: '#666' }}>
                       Prefer email? Every message gets a personal reply.
                     </p>
                     <a
                       href="mailto:bookings@djdaula.com"
-                      className="text-xs font-semibold text-daula-red hover:text-daula-white transition-colors duration-200"
+                      className="text-xs font-semibold text-daula-red hover:opacity-80 transition-opacity duration-200"
                     >
                       bookings@djdaula.com &rarr;
                     </a>
                   </div>
 
-                  <p className="text-xs text-daula-gray-light">
+                  <p className="text-xs" style={{ color: '#888' }}>
                     Have a quick question?{' '}
-                    <Link href="/faq" className="text-daula-white underline underline-offset-2 hover:text-daula-red transition-colors duration-200">
+                    <Link href="/faq" className="underline underline-offset-2 hover:text-daula-red transition-colors duration-200" style={{ color: '#111' }}>
                       See the FAQ
                     </Link>
                   </p>

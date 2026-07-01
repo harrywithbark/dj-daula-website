@@ -49,13 +49,13 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border-b border-daula-gray-mid">
+    <div style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
       >
-        <span className="text-base font-semibold text-daula-white">{question}</span>
+        <span className="text-base font-semibold" style={{ color: '#111' }}>{question}</span>
         <span
           className={`flex-shrink-0 w-5 h-5 flex items-center justify-center text-daula-red transition-transform duration-200 ${open ? 'rotate-45' : ''}`}
           aria-hidden="true"
@@ -67,7 +67,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
       </button>
       {open && (
         <div className="pb-5 pr-8">
-          <p className="text-sm text-daula-gray-light leading-relaxed">
+          <p className="text-sm leading-relaxed" style={{ color: '#555' }}>
             {answer}
           </p>
         </div>
@@ -79,12 +79,12 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 export default function FaqPage() {
   return (
     <PageShell>
-      <section className="bg-daula-black py-16 md:py-20 border-b border-daula-gray-mid">
+      <section className="bg-mesh-dark py-16 md:py-20 border-b border-daula-gray-mid">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red mb-3">
             FAQ
           </p>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-daula-white text-balance mb-4">
+          <h1 className="text-display-lg text-daula-white text-balance mb-4">
             Common questions.
           </h1>
           <p className="text-daula-gray-light text-base max-w-xl">
@@ -93,9 +93,9 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="bg-daula-gray py-12 md:py-16 border-b border-daula-gray-mid">
+      <section className="section-light py-12 md:py-16 border-b border-black/10">
         <div className="max-w-3xl mx-auto px-5 md:px-8">
-          <div className="border-t border-daula-gray-mid">
+          <div style={{ borderTop: '1px solid rgba(0,0,0,0.1)' }}>
             {FAQ_ITEMS.map((item) => (
               <FaqItem key={item.question} question={item.question} answer={item.answer} />
             ))}

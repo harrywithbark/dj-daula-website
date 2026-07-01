@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { EVENTS } from '@/lib/events-data'
 import PackageModal from './PackageModal'
+import TiltCard from '@/components/TiltCard'
 
 type EventId = typeof EVENTS[number]['id']
 
@@ -18,9 +19,9 @@ export default function PackagesClient() {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {EVENTS.map((event) => (
+          <TiltCard key={event.id} maxTilt={5} scale={1.015}>
           <article
-            key={event.id}
-            className="group bg-daula-black border border-daula-gray-mid flex flex-col overflow-hidden hover:border-daula-red/50 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(206,31,31,0.12)] cursor-pointer"
+            className="group bg-daula-black border border-daula-gray-mid flex flex-col overflow-hidden hover:border-daula-red/50 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(206,31,31,0.12)] cursor-pointer h-full"
             onClick={() => setSelectedPackage(event.id)}
             role="button"
             tabIndex={0}
@@ -99,6 +100,7 @@ export default function PackagesClient() {
               </div>
             </div>
           </article>
+          </TiltCard>
         ))}
       </div>
 

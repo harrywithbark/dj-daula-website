@@ -7,34 +7,35 @@ export default function AboutPreview() {
 
   return (
     <section
-      className="bg-daula-black py-20 md:py-28 border-b border-daula-gray-mid"
+      className="section-light py-20 md:py-28 border-b border-black/10"
       aria-labelledby="about-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="flex flex-col gap-6">
             <ScrollReveal>
-              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red">
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase" style={{ color: '#CE1F1F' }}>
                 About Daula
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2
                 id="about-heading"
-                className="text-3xl md:text-4xl font-black tracking-tight text-daula-white text-balance leading-tight"
+                className="text-display-lg text-balance"
+                style={{ color: '#111111' }}
               >
                 I came up in Surrey&apos;s clubs.
                 <br />
-                Now I do your wedding.
+                <span style={{ color: '#CE1F1F' }}>Now I do your wedding.</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p className="text-daula-gray-light text-base leading-relaxed">
+              <p className="text-base leading-relaxed" style={{ color: '#555' }}>
                 I&apos;m Chetan &mdash; DJ Daula. I started behind the decks in Surrey&apos;s club scene, building a sound that blends Bhangra, Bollywood, UK Grime, and House into something that hits different at every event.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <p className="text-lg font-bold text-daula-white">
+              <p className="text-lg font-bold" style={{ color: '#111' }}>
                 Book Daula. Get Daula.
               </p>
             </ScrollReveal>
@@ -48,7 +49,8 @@ export default function AboutPreview() {
                 </Link>
                 <Link
                   href="/about"
-                  className="text-sm font-medium text-daula-gray-light hover:text-daula-white transition-colors duration-200 flex items-center justify-center sm:justify-start gap-1"
+                  className="text-sm font-medium transition-colors duration-200 flex items-center justify-center sm:justify-start gap-1"
+                  style={{ color: '#666' }}
                 >
                   Read the full story &rarr;
                 </Link>
@@ -64,8 +66,8 @@ export default function AboutPreview() {
                 </div>
               )}
               <img
-                src="/dj-booth.jpg"
-                alt="DJ Daula behind the decks at a packed wedding reception — mid-set action shot"
+                src="/about-daula.png"
+                alt="DJ Daula — Chetan, Surrey's South Asian wedding DJ"
                 onLoad={() => setImgLoaded(true)}
                 className={`object-cover w-full h-full transition-opacity duration-500 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
               />

@@ -15,7 +15,7 @@ export default function GalleryPreview() {
 
   return (
     <section
-      className="bg-daula-gray py-20 md:py-28 border-b border-daula-gray-mid"
+      className="bg-daula-gray bg-subtle-grid py-20 md:py-28 border-b border-daula-gray-mid"
       aria-labelledby="gallery-heading"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -27,7 +27,7 @@ export default function GalleryPreview() {
               </p>
               <h2
                 id="gallery-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-daula-white text-balance"
+                className="text-display-lg text-daula-white text-balance"
               >
                 The dance floor
                 <br className="hidden md:block" /> doesn&apos;t lie.
