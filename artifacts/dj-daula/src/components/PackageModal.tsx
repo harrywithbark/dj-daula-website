@@ -1,5 +1,7 @@
+'use client'
+
 import { useEffect, useRef } from 'react'
-import { Link } from 'wouter'
+import Link from 'next/link'
 import { ADD_ONS, EVENTS } from '@/lib/events-data'
 
 type EventId = typeof EVENTS[number]['id']

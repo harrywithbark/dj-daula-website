@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { EVENTS } from '@/lib/events-data'
 import PackageModal from './PackageModal'

@@ -1,4 +1,4 @@
-import { Link } from 'wouter'
+import Link from 'next/link'
 
 interface LogoProps {
   variant?: 'dark' | 'light'

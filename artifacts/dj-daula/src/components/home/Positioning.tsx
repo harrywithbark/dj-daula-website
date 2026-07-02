@@ -1,3 +1,5 @@
+'use client'
+
 import ScrollReveal, { StaggerContainer } from '@/components/ScrollReveal'
 import TiltCard from '@/components/TiltCard'
 

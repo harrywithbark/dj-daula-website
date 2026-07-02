@@ -1,4 +1,6 @@
-import { Link } from 'wouter'
+'use client'
+
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function MobileStickyCta() {

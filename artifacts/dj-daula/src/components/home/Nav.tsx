@@ -1,4 +1,7 @@
-import { Link, useLocation } from 'wouter'
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 const NAV_LINKS = [
@@ -10,7 +13,7 @@ const NAV_LINKS = [
 ]
 
 export default function Nav() {
-  const [pathname] = useLocation()
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 

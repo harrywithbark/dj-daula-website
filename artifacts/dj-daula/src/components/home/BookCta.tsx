@@ -1,4 +1,6 @@
-import { Link } from 'wouter'
+'use client'
+
+import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const SHOW_SCARCITY_NOTE = false

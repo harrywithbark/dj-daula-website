@@ -1,3 +1,5 @@
+'use client'
+
 interface AftershockBadgeProps {
   className?: string
   size?: number

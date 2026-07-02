@@ -1,3 +1,5 @@
+'use client'
+
 export default function SectionDivider({ variant = 'dark' }: { variant?: 'dark' | 'light' | 'neon' }) {
   if (variant === 'neon') {
     return (

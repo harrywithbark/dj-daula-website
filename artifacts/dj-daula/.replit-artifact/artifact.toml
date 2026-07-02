@@ -6,26 +6,29 @@ id = "artifacts/dj-daula"
 router = "path"
 
 [[integratedSkills]]
-name = "react-vite"
+name = "nextjs"
 version = "1.0.0"
 
 [[services]]
 name = "web"
 paths = [ "/" ]
-localPort = 24709
+localPort = 3001
 
 [services.development]
 run = "pnpm --filter @workspace/dj-daula run dev"
 
-[services.production]
-build = [ "pnpm", "--filter", "@workspace/dj-daula", "run", "build" ]
-publicDir = "artifacts/dj-daula/dist/public"
-serve = "static"
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/dj-daula", "run", "build"]
 
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
+[services.production.build.env]
+NODE_ENV = "production"
+
+[services.production.run]
+args = ["pnpm", "--filter", "@workspace/dj-daula", "run", "start"]
+
+[services.production.run.env]
+PORT = "3001"
+NODE_ENV = "production"
 
 [services.env]
-PORT = "24709"
-BASE_PATH = "/"
+PORT = "3001"
