@@ -23,10 +23,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "DJ Daula — Surrey's South Asian Wedding DJ",
   description:
-    '15 years. 500+ events. Bhangra to Bollywood and everything between. Based in Surrey, BC — available worldwide.',
+    'Fifteen years. Five hundred+ weddings. Bhangra to Bollywood and everything your crowd actually wants to hear. Based in Surrey, BC — available worldwide.',
   openGraph: {
     title: "DJ Daula — Surrey's South Asian Wedding DJ",
-    description: '15 years. 500+ events. No substitutes, ever.',
+    description: 'Fifteen years. Five hundred+ weddings. One DJ — me, every night, no substitutes.',
     type: 'website',
   },
 }

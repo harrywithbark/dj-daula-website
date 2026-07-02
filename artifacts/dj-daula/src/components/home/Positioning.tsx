@@ -6,23 +6,23 @@ import TiltCard from '@/components/TiltCard'
 const PILLARS = [
   {
     number: '01',
-    title: 'You booked Daula. You get Daula.',
-    body: 'No substitutes. No subcontractors. No surprises. The DJ at your Sangeet is the same DJ at your Reception — every single time.',
+    title: 'The name on your contract is me.',
+    body: 'No substitutes. No subcontractors. No surprises. The DJ at your Sangeet is the same person behind the decks at your Reception — every single night.',
   },
   {
     number: '02',
-    title: '15 years. Not 15 years of the company.',
-    body: 'Not 15 years of the company. 15 years of Chetan — reading crowds, building sets, knowing exactly when to drop.',
+    title: 'Fifteen years of me — not a brand.',
+    body: 'Not assistants. Not a roster. Fifteen years of reading crowds, building sets, and knowing exactly when to drop the song that empties the bar and fills the floor.',
   },
   {
     number: '03',
-    title: 'Open-format South Asian specialist.',
-    body: 'Bhangra, Bollywood, UK Grime, House, Hip-Hop — seamlessly blended so nobody sits down.',
+    title: 'South Asian at the core. Open-format everywhere.',
+    body: 'Bhangra, Bollywood, UK Grime, House, Hip-Hop — blended so your nan and your college friends are both still dancing at midnight.',
   },
   {
     number: '04',
-    title: 'From Surrey. For Surrey — and beyond.',
-    body: 'Local with no travel fees across the Lower Mainland. Available for destination weddings worldwide.',
+    title: 'Surrey-born. Lower Mainland to destination.',
+    body: 'Based here with no travel fees across the Lower Mainland. Getting married abroad? I\'ve done that too.',
   },
 ]
 
@@ -55,7 +55,7 @@ export default function Positioning() {
               </span>
             </h2>
             <p className="text-sm max-w-xs leading-relaxed" style={{ color: '#666' }}>
-              Four reasons the couples who do their research keep coming back to the same name.
+              Four things couples tell me after they&apos;ve done their homework.
             </p>
           </div>
         </ScrollReveal>

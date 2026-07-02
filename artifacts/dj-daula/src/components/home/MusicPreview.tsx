@@ -8,19 +8,19 @@ const MIXES = [
   {
     title: 'Sangeet Set — Vol. 1',
     genre: 'Bhangra · Bollywood',
-    description: 'The floor-filler that defines the weekend.',
+    description: 'Peak Bhangra and Bollywood — the set your cousins will ask for on repeat.',
     embedUrl: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/djdaula&color=%23CE1F1F&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false',
   },
   {
     title: 'Reception Set',
     genre: 'Hip-Hop · R&B · Open Format',
-    description: 'From first dance through peak floor.',
+    description: 'First dance to last song — the room builds, then it pops off.',
     embedUrl: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/djdaula&color=%23CE1F1F&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false',
   },
   {
     title: 'NYE DIVERGENT',
     genre: 'UK Grime · House · Punjabi',
-    description: 'His signature crossover sound.',
+    description: 'Where Punjabi roots meet UK Grime and House — my signature sound.',
     embedUrl: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/djdaula&color=%23CE1F1F&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false',
   },
 ]

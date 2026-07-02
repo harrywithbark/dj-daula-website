@@ -101,7 +101,7 @@ export default function Footer() {
               Available Worldwide
             </p>
             <p className="text-xs leading-relaxed max-w-xs" style={{ color: '#666' }}>
-              15 years behind the decks. 500+ events. One DJ — no substitutes, ever. From Bhangra to Bollywood and everything between.
+              Fifteen years behind the decks. Five hundred+ weddings. One DJ — me, every night, no substitutes. Bhangra to Bollywood and everything your crowd actually wants to hear.
             </p>
             <div className="flex items-center gap-4 mt-1">
               {SOCIALS.map(({ label, href, Icon }) => (

@@ -76,13 +76,13 @@ export default function Testimonials() {
                 className="text-display-lg text-balance"
                 style={{ color: '#111111' }}
               >
-                From couples who trusted
+                Couples who put their
                 <br />
-                Daula with their night.
+                whole weekend in my hands.
               </h2>
             </div>
             <p className="text-sm max-w-xs leading-relaxed" style={{ color: '#666' }}>
-              Every review is unedited. Every couple is real.
+              Real reviews. Word for word. No edits.
             </p>
           </div>
         </ScrollReveal>

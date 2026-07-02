@@ -26,14 +26,14 @@ export default function BookCta() {
               id="book-cta-heading"
               className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-daula-white text-balance mb-3"
             >
-              Your date. Your music.
+              Your date. Your crowd.
               <br />
-              <span className="text-daula-red">Let&apos;s make it happen.</span>
+              <span className="text-daula-red">Let&apos;s build the set.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <p className="text-daula-gray-light text-base mb-10">
-              Check availability &mdash; no commitment required.
+              Check if I&apos;m free &mdash; no pressure, no commitment.
             </p>
           </ScrollReveal>
 
@@ -44,7 +44,7 @@ export default function BookCta() {
                   Fill the form
                 </p>
                 <p className="text-sm text-daula-gray-light leading-relaxed flex-1">
-                  Share your event details and Daula responds personally within 24 hours.
+                  Tell me about your weekend. I reply personally within 24 hours.
                 </p>
                 <Link
                   href="/contact"
@@ -59,7 +59,7 @@ export default function BookCta() {
                   WhatsApp
                 </p>
                 <p className="text-sm text-daula-gray-light leading-relaxed flex-1">
-                  Fastest response. Drop a message and hear back the same day.
+                  Fastest way to reach me. Send a message and I&apos;ll get back to you the same day.
                 </p>
                 <a
                   href="https://wa.me/17780000000"
@@ -76,7 +76,7 @@ export default function BookCta() {
                   Email
                 </p>
                 <p className="text-sm text-daula-gray-light leading-relaxed flex-1">
-                  Prefer email? Write directly &mdash; every enquiry is answered personally.
+                  Prefer email? Write directly &mdash; I read every enquiry myself.
                 </p>
                 <a
                   href="mailto:bookings@djdaula.com"

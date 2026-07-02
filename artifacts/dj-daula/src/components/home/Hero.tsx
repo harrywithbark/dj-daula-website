@@ -164,7 +164,7 @@ export default function Hero() {
           className="text-sm md:text-base text-daula-gray-light leading-relaxed max-w-md mb-8"
           style={anim(0.7)}
         >
-          15 years. 500+ events. Bhangra to Bollywood and everything between&nbsp;&mdash; you booked Daula, you get Daula.
+          Fifteen years. Five hundred+ weddings. Bhangra to Bollywood and everything your crowd didn&apos;t know they needed&nbsp;&mdash; you book me, I show up. Every night.
         </p>
 
         {/* CTAs */}

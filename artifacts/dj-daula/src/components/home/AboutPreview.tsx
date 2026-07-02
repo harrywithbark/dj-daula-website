@@ -26,19 +26,19 @@ export default function AboutPreview() {
                 className="text-display-lg text-balance"
                 style={{ color: '#111111' }}
               >
-                I came up in Surrey&apos;s clubs.
+                I learned to DJ in Surrey&apos;s clubs.
                 <br />
-                <span style={{ color: '#CE1F1F' }}>Now I do your wedding.</span>
+                <span style={{ color: '#CE1F1F' }}>Now I run your dance floor.</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-base leading-relaxed" style={{ color: '#555' }}>
-                I&apos;m Chetan &mdash; DJ Daula. I started behind the decks in Surrey&apos;s club scene, building a sound that blends Bhangra, Bollywood, UK Grime, and House into something that hits different at every event.
+                I&apos;m Chetan &mdash; DJ Daula. Surrey&apos;s club scene taught me to read a room fast. Fifteen years later, that same instinct goes into every Sangeet and reception: Bhangra, Bollywood, UK Grime, and House woven together so your aunty, your cousins, and your college friends all find their song on the same floor.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p className="text-lg font-bold" style={{ color: '#111' }}>
-                Book Daula. Get Daula.
+                You book me. You get me. Every night.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.4}>
@@ -47,14 +47,14 @@ export default function AboutPreview() {
                   href="/contact"
                   className="text-daula-white text-sm font-semibold tracking-wide px-6 py-3 text-center neon-btn-red"
                 >
-                  Let&apos;s talk about your wedding &rarr;
+                  Let&apos;s plan your wedding &rarr;
                 </Link>
                 <Link
                   href="/about"
                   className="text-sm font-medium transition-colors duration-200 flex items-center justify-center sm:justify-start gap-1"
                   style={{ color: '#666' }}
                 >
-                  Read the full story &rarr;
+                  Read my full story &rarr;
                 </Link>
               </div>
             </ScrollReveal>

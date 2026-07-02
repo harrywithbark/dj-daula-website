@@ -7,9 +7,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red mb-3">About</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-daula-white text-balance">
-            I came up in Surrey&apos;s clubs.
+            I learned to DJ in Surrey&apos;s clubs.
             <br />
-            Now I do your wedding.
+            Now I run your dance floor.
           </h1>
         </div>
       </section>
@@ -19,18 +19,18 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div className="flex flex-col gap-6 text-daula-gray-light leading-relaxed text-base">
               <p>
-                I&apos;m Chetan &mdash; DJ Daula. I started behind the decks in Surrey&apos;s club scene, building a sound that blends Bhangra, Bollywood, UK Grime, and House into something that hits different at every event.
+                I&apos;m Chetan &mdash; DJ Daula. I cut my teeth in Surrey&apos;s club scene, where you learn to read a room before the first drop or you don&apos;t last. That same skill goes into every wedding: Bhangra, Bollywood, UK Grime, and House &mdash; blended so the whole family stays on the floor, not just the young ones.
               </p>
               <p>
-                After 15 years and hundreds of South Asian weddings across Vancouver and beyond, I know exactly how to read a dance floor and keep it moving &mdash; whether that&apos;s a 200-person Sangeet or an intimate family Mehndi. Your crowd isn&apos;t the same as anyone else&apos;s, and I don&apos;t treat it that way.
+                Fifteen years and hundreds of South Asian weddings across Vancouver and beyond. I&apos;ve run 200-person Sangeets where the floor never empties, and intimate Mehndis where the energy has to be just right. Your crowd is different from everyone else&apos;s. I build the set around that &mdash; not a template.
               </p>
               <p>
-                It started the way it usually does &mdash; bedroom sets, then a pub residency, then the club circuit. I built a name in Surrey&apos;s South Asian scene the slow way: one floor at a time, one crowd at a time.
+                It started the way it usually does: bedroom sets, a pub residency, then the club circuit. I built my name in Surrey&apos;s South Asian scene one night at a time &mdash; no shortcuts, no ghost DJs, no sending someone else in my place.
               </p>
-              <p className="text-xl font-bold text-daula-white">Book Daula. Get Daula.</p>
+              <p className="text-xl font-bold text-daula-white">You book me. You get me. Every night.</p>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Link href="/contact" className="bg-daula-red text-daula-white text-sm font-semibold tracking-wide px-6 py-3 hover:bg-daula-red/90 transition-colors duration-200 text-center">
-                  Let&apos;s talk about your wedding &rarr;
+                  Let&apos;s plan your wedding &rarr;
                 </Link>
                 <Link href="/music" className="border border-daula-white/20 text-daula-white text-sm font-medium px-6 py-3 hover:border-daula-white/50 hover:bg-daula-white/5 transition-all duration-200 text-center">
                   Listen to the mixes &rarr;

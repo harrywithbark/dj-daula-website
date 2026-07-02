@@ -124,11 +124,11 @@ export default function EventsPreview() {
                 className="text-display-lg text-daula-white text-balance"
               >
                 Every night of your wedding
-                <br className="hidden md:block" /> weekend, covered.
+                <br className="hidden md:block" /> weekend — handled.
               </h2>
             </div>
             <p className="text-daula-gray-light text-sm max-w-sm">
-              Click any card below to explore the full experience.
+              Tap any event to see how I run it.
             </p>
           </div>
         </ScrollReveal>
