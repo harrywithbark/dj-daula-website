@@ -1,0 +1,65 @@
+'use client'
+
+import Link from 'next/link'
+import { useState } from 'react'
+
+const ALL_ITEMS = [
+  { caption: 'Sangeet · Fusion Banquet Hall · Surrey, BC · 2024', filter: 'Sangeet' },
+  { caption: 'Reception · Crystal Ballroom · Vancouver, BC · 2024', filter: 'Reception' },
+  { caption: 'Mehndi · Private Residence · Surrey, BC · 2024', filter: 'Mehndi / Dholki' },
+  { caption: 'Sangeet · Aria Banquet · Burnaby, BC · 2023', filter: 'Sangeet' },
+  { caption: 'Reception · Sheraton Vancouver Airport · 2023', filter: 'Reception' },
+  { caption: 'Sangeet · Anvil Centre · New Westminster · 2023', filter: 'Sangeet' },
+  { caption: 'Mehndi / Dholki · Langley · 2023', filter: 'Mehndi / Dholki' },
+  { caption: 'Reception · Fairmont Pacific Rim · Vancouver · 2022', filter: 'Reception' },
+  { caption: 'Sangeet · Cascades Casino · Langley · 2022', filter: 'Sangeet' },
+]
+const FILTERS = ['All', 'Sangeet', 'Reception', 'Mehndi / Dholki']
+
+export default function GalleryPage() {
+  const [active, setActive] = useState('All')
+  const filtered = active === 'All' ? ALL_ITEMS : ALL_ITEMS.filter((i) => i.filter === active)
+
+  return (
+    <main className="pt-16">
+      <section className="bg-daula-black py-16 md:py-20 border-b border-daula-gray-mid">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-daula-red mb-3">Gallery</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-daula-white text-balance mb-4">The dance floor doesn&apos;t lie.</h1>
+          <p className="text-daula-gray-light text-base">Hundreds of nights. One standard.</p>
+        </div>
+      </section>
+
+      <section className="bg-daula-gray py-12 md:py-16 border-b border-daula-gray-mid">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="flex flex-wrap gap-2 mb-8">
+            {FILTERS.map((f) => (
+              <button key={f} onClick={() => setActive(f)} className={`px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${active === f ? 'bg-daula-red text-daula-white' : 'bg-daula-black border border-daula-gray-mid text-daula-gray-light hover:text-daula-white hover:border-daula-white/30'}`}>
+                {f}
+              </button>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+            {filtered.map((item, i) => (
+              <figure key={i} className="relative overflow-hidden bg-daula-black group aspect-[4/3]">
+                <img src="/placeholder.svg" alt={item.caption} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
+                <figcaption className="absolute inset-0 bg-daula-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-xs text-daula-white leading-snug">{item.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          {filtered.length === 0 && <p className="text-daula-gray-light text-sm text-center py-12">No items for this filter yet.</p>}
+        </div>
+      </section>
+
+      <section className="bg-daula-black py-14 border-b border-daula-gray-mid">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <Link href="/contact" className="bg-daula-red text-daula-white font-semibold tracking-wide px-8 py-3.5 text-sm hover:bg-daula-red/90 transition-colors duration-200 inline-flex items-center">
+            Inspired? Check your date &rarr;
+          </Link>
+        </div>
+      </section>
+    </main>
+  )
+}

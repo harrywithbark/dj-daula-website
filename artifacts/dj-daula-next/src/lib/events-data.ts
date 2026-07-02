@@ -1,0 +1,82 @@
+export const ADD_ONS = [
+  { id: 'uplighting', name: 'Uplighting', description: 'Color-changing LED uplighting for venue mood' },
+  { id: 'neonlighting', name: 'Neon Uplighting', description: 'Vibrant neon cyan, pink & purple lighting — next-level energy', isPremium: true },
+  { id: 'secondmic', name: 'Second Microphone', description: 'Extra wireless mic for toasts & announcements' },
+  { id: 'dancing', name: 'Desi Dancing Coach', description: 'Live dance coaching session (30 min)' },
+  { id: 'photobooth', name: 'Photo Booth Setup', description: 'Photo booth music & transitions' },
+  { id: 'livedrums', name: 'Live Drums', description: 'Add live dhol player for select songs' },
+  { id: 'mcsetup', name: 'Full MC Setup', description: 'Professional MC service with DJ coordination' },
+] as const
+
+export const EVENTS = [
+  {
+    id: 'sangeet',
+    name: 'Sangeet',
+    description:
+      'The high-energy night that sets the tone for the whole weekend. Deep Bhangra, peak-hour Bollywood, and the floor-filling sets your family will talk about for years.',
+    details: 'The Sangeet is where the vibe gets set. Daula mixes peak-energy Bhangra with Bollywood hits, keeping the floor packed from the first song. Live mic transitions keep the energy momentum going — every cousin, every age, every generation on the same dance floor.',
+    badge: 'Most Booked',
+    badgeColor: 'bg-daula-red text-daula-white',
+    included: ['3–5 hour set', 'Full sound system', 'Custom Bhangra/Bollywood set', 'Live mic transitions'],
+    imgSrc: '/event-sangeet.png',
+    imgAlt: 'Sangeet dance floor — DJ Daula behind the decks with vibrant stage lighting',
+    accentLabel: 'Bhangra · Bollywood',
+    suggestedAddOns: ['uplighting', 'neonlighting', 'secondmic', 'livedrums'],
+  },
+  {
+    id: 'reception',
+    name: 'Wedding Reception',
+    description:
+      'Open-format for every guest at every table. Seamless transitions from first dance to peak floor — Hip-Hop, Top 40, Bollywood, R&B, all in one night.',
+    details: 'The Reception is the grand finale. Daula coordinates your first dance, reads the room across every table, and transitions from soft early sets to peak-hour floor chaos. Open-format mixing means no two songs feel the same — the playlist is alive, responding to the crowd.',
+    badge: null,
+    badgeColor: '',
+    included: ['4–6 hour set', 'Full sound system', 'First dance coordination', 'Open-format mixing'],
+    imgSrc: '/event-reception.png',
+    imgAlt: 'Wedding reception dance floor lit up with glow sticks',
+    accentLabel: 'Hip-Hop · R&B · Open Format',
+    suggestedAddOns: ['uplighting', 'neonlighting', 'secondmic', 'mcsetup'],
+  },
+  {
+    id: 'mehndi',
+    name: 'Mehndi / Dholki',
+    description:
+      'A more intimate, high-vibe gathering. Daula keeps the energy right — not too big, not too quiet — while the henna flows and the family warms up for the weekend ahead.',
+    details: "The Mehndi sets a different kind of energy. It's intimate but lively — henna artists, gossiping aunties, cousins dancing. Daula keeps the background warm and the peak moments peak, never letting the floor go cold or too chaotic.",
+    badge: null,
+    badgeColor: '',
+    included: ['2–4 hour set', 'Sound system', 'Coordinated playlist pacing', 'Family-friendly format'],
+    imgSrc: '/event-mehndi.png',
+    imgAlt: 'Mehndi evening — guests in vibrant traditional attire celebrating together',
+    accentLabel: 'Mehndi · Dholki',
+    suggestedAddOns: ['uplighting', 'neonlighting', 'livedrums', 'dancing'],
+  },
+  {
+    id: 'engagement',
+    name: 'Engagement Party',
+    description:
+      'The first celebration of many. Lock in the vibe early with a set that blends backgrounds, generations, and playlists — so everyone leaves knowing this wedding is going to be different.',
+    details: "Your Engagement is the preview of what's coming. Daula blends musical tastes from everyone present — if your crew is mixed Desi/Western, Daula makes both feel represented and celebrated. First impression counts.",
+    badge: null,
+    badgeColor: '',
+    included: ['2–4 hour set', 'Sound system', 'Mixed-audience format', 'Custom playlist consultation'],
+    imgSrc: '/event-engagement.png',
+    imgAlt: 'Engagement party — DJ setup overlooking a packed ballroom',
+    accentLabel: 'Mixed · Open Format',
+    suggestedAddOns: ['uplighting', 'neonlighting', 'photobooth'],
+  },
+  {
+    id: 'full-weekend',
+    name: 'Full Weekend Package',
+    description:
+      'One DJ across every night of your wedding weekend. No handoffs, no inconsistency — just Daula reading the same crowd from night one through the last song of the reception.',
+    details: 'Book Daula for the whole weekend and get continuity. Same DJ means no re-educating a new person on your family vibe. The crowd recognizes the voice, the transitions, the energy. You get the backstage coordination across all your events — one person holding it all together.',
+    badge: 'Best Value',
+    badgeColor: 'bg-daula-gold text-daula-black',
+    included: ['All events covered', 'Consistent DJ across every night', 'Custom set planning per event', 'Priority booking'],
+    imgSrc: '/event-full-weekend.png',
+    imgAlt: 'Full wedding weekend — guests dancing at a traditional celebration',
+    accentLabel: 'All Events · One DJ',
+    suggestedAddOns: ['uplighting', 'neonlighting', 'secondmic', 'mcsetup', 'livedrums'],
+  },
+] as const
